@@ -3,8 +3,8 @@
 		"id": 1,
 		"titulo": "Porducto Prueba",
 		"descripcion": "Esto es un producto prueba",
-		"precio": 300,
-		"rutaDeImagen": "sin ruta",
+		"precio": 370,
+		"rutaDeImagen": "esta si",
 		"codigo": "Codigo123",
 		"stock": 50
 	}

@@ -90,6 +90,7 @@ class ProductMannager {
     return producto;
   }
 
+  // falta arreglar esto, y testear todo!
   async updateProduct(productoId, cambios) {
     this.productos = this.productos.map((producto) => {
       if (producto.id === productoId) {
@@ -138,6 +139,11 @@ class ProductMannager {
   }
 }
 
+let cambios = {
+  rutaDeImagen: "esta si",
+  precio: 370,
+};
+
 async function pruebas() {
   const manejadorDeProducto = new ProductMannager("./productos.json");
   await manejadorDeProducto.getProductos();
@@ -153,6 +159,7 @@ async function pruebas() {
   console.log(manejadorDeProducto.getProductoById(1));
 
   manejadorDeProducto.deleteProduct(2);
+  manejadorDeProducto.updateProduct(1, cambios);
 }
 
 pruebas();
