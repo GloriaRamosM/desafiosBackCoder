@@ -1,24 +1,25 @@
 import fs from "fs";
 
 class ProductMannager {
+  productos = [];
+  path;
+
   constructor(path) {
-    this.productos = [];
     this.path = path;
+    if (fs.existsSync(this.path)) {
+      this.productos = JSON.parse(fs.readFileSync(this.path, "utf-8"));
+      console.log("existe el archivo");
+    } else {
+      fs.writeFileSync(this.path, JSON.stringify(this.productos));
+      console.log("no existe");
+    }
   }
 
   getProductos = async () => {
-    try {
-      const productsfile = await fs.promises.readFile(this.path, "utf-8");
-      const products = await JSON.parse(productsfile);
-      this.productos = products;
-      return this.productos;
-    } catch (error) {
-      if (error.code == "ENOENT") {
-        await fs.promises.writeFile(this.path, "[]");
-        console.log("Se creo el archivo en la ruta " + this.path);
-        return this.productos;
-      }
-    }
+    const productsfile = await fs.promises.readFile(this.path, "utf-8");
+    const products = await JSON.parse(productsfile);
+    this.productos = products;
+    return this.productos;
   };
 
   async agregarProductos(
@@ -145,7 +146,7 @@ let cambios = {
 };
 
 async function pruebas() {
-  const manejadorDeProducto = new ProductMannager("./productos.json");
+  const manejadorDeProducto = new ProductMannager("./productos4.json");
   await manejadorDeProducto.getProductos();
   await manejadorDeProducto.agregarProductos(
     "Porducto Prueba",
@@ -164,4 +165,4 @@ async function pruebas() {
 
 pruebas();
 
-// Debo comentar todos los metodos para recodar como funcionan
+// Debo comentar todo para recordar como funciona cada cosa
