@@ -1,11 +1,29 @@
 [
 	{
-		"id": 1,
-		"titulo": "Porducto Prueba",
+		"id": 7,
+		"titulo": "lentes",
 		"descripcion": "Esto es un producto prueba",
-		"precio": 370,
-		"rutaDeImagen": "esta si",
-		"codigo": "Codigo123",
+		"precio": 200,
+		"rutaDeImagen": "sin ruta",
+		"codigo": "Codigo1234",
+		"stock": 50
+	},
+	{
+		"id": 8,
+		"titulo": "remera",
+		"descripcion": "Esto es un producto prueba",
+		"precio": 300,
+		"rutaDeImagen": "sin ruta",
+		"codigo": "Codigo12345678",
+		"stock": 50
+	},
+	{
+		"id": 9,
+		"titulo": "pantys",
+		"descripcion": "Esto es un producto prueba",
+		"precio": 300,
+		"rutaDeImagen": "sin ruta",
+		"codigo": "Codigo123456789",
 		"stock": 50
 	}
 ]
